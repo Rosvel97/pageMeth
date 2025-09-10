@@ -1,11 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SOVE Skincare — Glow Naturally</title>
+  <meta name="description" content="Skincare landing page con hero, productos, beneficios, testimonios y promociones." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Methzi love</h1>
+  <!-- Announcement bar -->
+  <div class="announce">Obtén <strong>10% OFF</strong> en tu primera compra — usa el código <a href="#" id="copyCode">SALE10</a></div>
+
+  <!-- Header / Nav -->
+  <header>
+    <nav class="nav">
+      <div class="brand"><span class="dot"></span> SOVE</div>
+      <ul>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#beneficios">Novedades</a></li>
+        <li><a href="#testimonios">Reseñas</a></li>
+        <li><a href="#promo">Promos</a></li>
+      </ul>
+      <button class="btn primary">Comprar ahora</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-left">
+      <span class="eyebrow">Nuevo</span>
+      <h1>Brillo natural para tu piel</h1>
+      <p>Rutinas creadas por dermatólogos. Ingredientes veganos y envases reciclables. Pruébalo hoy y siente la diferencia.</p>
+      <div class="hero-cta">
+        <button class="btn primary">Ver nuevos ingresos</button>
+        <span class="tag">✨ Envío gratis desde $39</span>
+      </div>
+    </div>
+    <div class="hero-right"><div class="hero-img" aria-hidden="true"></div></div>
+  </section>
+
+  <!-- Productos -->
+  <section id="productos" class="products">
+    <h2 class="section-title">Esenciales de la temporada</h2>
+    <p class="muted">Descubre nuestros best-sellers y arma tu rutina.</p>
+    <div class="spacer"></div>
+    <div class="product-row">
+      <article class="card">
+        <div class="pic" style="background-image:url('https://picsum.photos/seed/toner/600/450')"></div>
+        <h4>pH Toner</h4>
+        <p class="price">$19</p>
+        <div class="cta"><button class="btn primary" data-add>Agregar</button></div>
+      </article>
+      <article class="card">
+        <div class="pic" style="background-image:url('https://picsum.photos/seed/cleanser/600/450')"></div>
+        <h4>Oil Cleanser</h4>
+        <p class="price">$21</p>
+        <div class="cta"><button class="btn primary" data-add>Agregar</button></div>
+      </article>
+      <article class="card">
+        <div class="pic" style="background-image:url('https://picsum.photos/seed/bundle/600/450')"></div>
+        <h4>Skincare Bundle</h4>
+        <p class="price">$56</p>
+        <div class="cta"><button class="btn primary" data-add>Agregar</button></div>
+      </article>
+      <article class="card">
+        <div class="pic" style="background-image:url('https://picsum.photos/seed/duo/600/450')"></div>
+        <h4>SPF Duo</h4>
+        <p class="price">$35</p>
+        <div class="cta"><button class="btn primary" data-add>Agregar</button></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section id="beneficios">
+    <div class="benefits">
+      <div class="benefit">
+        <div class="icon">🌱</div>
+        <div>
+          <h4>Ingredientes veganos</h4>
+          <p class="muted">Sin parabenos ni fragancias sintéticas agresivas.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="icon">🧪</div>
+        <div>
+          <h4>Probado dermatológicamente</h4>
+          <p class="muted">Fórmulas seguras para pieles sensibles.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="icon">♻️</div>
+        <div>
+          <h4>Envases reciclables</h4>
+          <p class="muted">Compromiso real con la sostenibilidad.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="icon">💖</div>
+        <div>
+          <h4>Cruelty-free</h4>
+          <p class="muted">Nunca testeado en animales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="testimonials">
+    <h2 class="section-title" style="text-align:center">Lo que dicen nuestras clientas</h2>
+    <div class="quote-grid">
+      <figure class="quote">
+        <div class="who"><div class="avatar" style="background:url('https://i.pravatar.cc/80?img=12') center/cover"></div><figcaption>Patricia — Piel seca</figcaption></div>
+        <div class="stars">★★★★★</div>
+        <p>El aceite limpiador deja mi piel suave sin resecar. ¡Recomendado!</p>
+      </figure>
+      <figure class="quote">
+        <div class="who"><div class="avatar" style="background:url('https://i.pravatar.cc/80?img=32') center/cover"></div><figcaption>María — Mixta</figcaption></div>
+        <div class="stars">★★★★★</div>
+        <p>Noté el glow desde la primera semana. Huele suave y se siente ligero.</p>
+      </figure>
+      <figure class="quote">
+        <div class="who"><div class="avatar" style="background:url('https://i.pravatar.cc/80?img=5') center/cover"></div><figcaption>Ana — Sensible</figcaption></div>
+        <div class="stars">★★★★☆</div>
+        <p>Excelente tolerancia. El tónico equilibró mi piel en días.</p>
+      </figure>
+      <figure class="quote">
+        <div class="who"><div class="avatar" style="background:url('https://i.pravatar.cc/80?img=21') center/cover"></div><figcaption>Sofía — Grasa</figcaption></div>
+        <div class="stars">★★★★★</div>
+        <p>La rutina anti-brillo funciona. Adiós a los parches secos.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Promo band -->
+  <section id="promo" class="promo">
+    <div class="img" aria-hidden="true"></div>
+    <div class="copy">
+      <h2 style="margin:0 0 8px">Restaura tu glow natural</h2>
+      <p class="muted">Eleva tu rutina con activos inteligentes y texturas ligeras.</p>
+      <div class="hero-cta"><button class="btn primary">Comienza tu rutina</button><span class="tag">🎁 10% para estudiantes</span></div>
+    </div>
+  </section>
+
+  <!-- Duo cards -->
+  <section class="duo">
+    <article class="tile">
+      <div class="img" aria-hidden="true"></div>
+      <div class="bar"><strong>10% OFF para estudiantes</strong><button class="btn primary">Aplicar</button></div>
+    </article>
+    <article class="tile">
+      <div class="img" aria-hidden="true"></div>
+      <div class="bar"><strong>Haz tu quiz de skincare</strong><button class="btn primary">Empezar</button></div>
+    </article>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="brand"><span class="dot"></span> SOVE</div>
+        <p class="muted">Cuidado de la piel con fórmulas limpias. Diseñado para brillar.</p>
+        <div class="social">
+          <a aria-label="Instagram" href="#">IG</a>
+          <a aria-label="TikTok" href="#">TT</a>
+          <a aria-label="YouTube" href="#">YT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Compañía</h5>
+        <a href="#" class="muted">Nosotros</a><br>
+        <a href="#" class="muted">Blog</a><br>
+        <a href="#" class="muted">Trabaja con nosotros</a>
+      </div>
+      <div class="footer-col">
+        <h5>Ayuda</h5>
+        <a href="#" class="muted">Envíos</a><br>
+        <a href="#" class="muted">Devoluciones</a><br>
+        <a href="#" class="muted">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="#" class="muted">Privacidad</a><br>
+        <a href="#" class="muted">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
