@@ -539,3 +539,15 @@ a{color:inherit; text-decoration:none}
     min-width: 84%;
   }
 }
+
+/* Centrar los íconos SOLO en móvil */
+@media (max-width: 768px) {
+  .social {
+    text-align: center;
+  }
+
+  .social__icons {
+    justify-content: center; /* centra horizontal */
+    flex-wrap: wrap;         /* permite que bajen de línea si no caben */
+  }
+}
