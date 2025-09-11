@@ -55,3 +55,90 @@ const io = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.card, .split__grid, .botanical, .features__grid')
   .forEach(el => io.observe(el));
+
+  // --- Modal Sirenglow (láminas web) ---
+(() => {
+  const btnOpen = document.getElementById('openInfo');
+  const modal = document.getElementById('infoModal');
+  const sheets = [...document.querySelectorAll('.sheet')];
+  const prev = document.getElementById('sheetPrev');
+  const next = document.getElementById('sheetNext');
+  const tabsWrap = document.getElementById('sheetTabs');
+
+  let index = 0, startX = 0;
+
+  const render = () => {
+    sheets.forEach((s,i)=> s.classList.toggle('is-active', i===index));
+    [...tabsWrap.children].forEach((b,i)=> b.classList.toggle('is-active', i===index));
+  };
+
+  const open = () => {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    render();
+  };
+  const close = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  };
+  const go = (d) => { index = (index + d + sheets.length) % sheets.length; render(); };
+
+  // Construir tabs desde los data-title
+  sheets.forEach((s,i)=>{
+    const b=document.createElement('button');
+    b.textContent = s.dataset.title || `Sección ${i+1}`;
+    b.addEventListener('click', ()=>{ index=i; render(); });
+    tabsWrap.appendChild(b);
+  });
+
+  btnOpen?.addEventListener('click', open);
+  modal?.addEventListener('click', (e)=>{ if(e.target.hasAttribute('data-close-modal')) close(); });
+// backdrop o botón con data-close-modal
+modal?.addEventListener('click', (e)=>{
+  if(e.target.dataset.closeModal !== undefined) close();
+});
+
+document.querySelectorAll('[data-close-modal]').forEach(el=>{
+  el.addEventListener('click', close);
+});
+
+  prev?.addEventListener('click', ()=>go(-1));
+  next?.addEventListener('click', ()=>go(1));
+
+  // Teclado
+  window.addEventListener('keydown', (e)=>{
+    if(!modal.classList.contains('is-open')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowLeft') go(-1);
+    if(e.key==='ArrowRight') go(1);
+  });
+
+  // Swipe en móvil
+  const stage = document.getElementById('sheets');
+  stage.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
+  stage.addEventListener('touchend', (e)=>{
+    const dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx)>40) go(dx>0?-1:1);
+  }, {passive:true});
+})();
+
+// --- close helpers ---
+const modal = document.getElementById('infoModal');
+const closeModal = () => {
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+};
+
+// cierra al hacer click en el fondo o en cualquier elemento con data-close-modal
+modal.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal__backdrop')) return closeModal();
+  if (e.target.closest('[data-close-modal]')) return closeModal();
+});
+
+// fallback directo por si algo elimina la delegación
+document.querySelectorAll('[data-close-modal]').forEach(el =>
+  el.addEventListener('click', closeModal)
+);

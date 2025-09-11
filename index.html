@@ -108,32 +108,138 @@
     </div>
   </section>
 
-  <!-- Tahiti Botanicals -->
   <section class="section">
     <div class="container botanical">
-      <img src="assets/crema_novamyth.jpg" class="botanical__img" alt="Botellas sobre fondo azul" />
+      <img src="assets/crema_novamyth.jpg" class="botanical__img" alt="Siren Glow" />
       <div class="botanical__text">
         <h2 class="title">Siren Glow</h2>
         <p>Descubre Sirenglow, nuestra leche limpiadora con extracto de té verde, pensada para limpiar
-          suavemente, revitalizar y dejar la piel radiante.</p>
-        <a class="btn" href="#magazine">Leer mas</a>
+          suavemente, revitalizar y dejar la piel radiante.</p>
+        <button class="btn" id="openInfo">Leer más</button>
       </div>
     </div>
   </section>
+
+  <!-- Modal responsivo de láminas (contenido web) -->
+  <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-label="Información Sirenglow">
+    <div class="modal__backdrop" data-close-modal></div>
+
+    <div class="modal__dialog" role="document">
+
+      <div class="modal__stage sheets" id="sheets">
+        <!-- Slide 1: Beneficios -->
+        <article class="sheet is-active" data-title="Beneficios">
+          <header class="sheet__header">
+            <span class="kicker">Siren Glow</span>
+            <h3 class="sheet__title">Beneficios</h3>
+          </header>
+
+          <div class="sheet__grid">
+            <ul class="bullet-list">
+              <li><strong>Limpieza suave y efectiva.</strong> Elimina impurezas, exceso de grasa y restos de maquillaje
+                sin resecar la piel.</li>
+              <li><strong>Con extracto de té verde.</strong> Propiedades antioxidantes que ayudan a proteger la piel del
+                daño ambiental y a mantenerla revitalizada.</li>
+              <li><strong>Hidratación y confort.</strong> Su textura cremosa mantiene la humedad natural de la piel,
+                brindando suavidad y elasticidad.</li>
+              <li><strong>Ideal para pieles normales a secas.</strong> Nutre y respeta el equilibrio natural de la piel.
+              </li>
+            </ul>
+            <div class="sheet__side">
+              <div class="fact">
+                <span class="badge">No toxico</span>
+                <p>producto no toxico.</p>
+              </div>
+
+              <div class="fact">
+                <span class="badge">Libre de Crueldad Animal</span>
+                <p>Nunca testeado en animales.</p>
+              </div>
+
+              <div class="fact">
+                <span class="badge">Sin parabenos</span>
+                <p>Libre de fragancias sintéticas agresivas.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 2: Modo de uso -->
+        <article class="sheet" data-title="Modo de uso">
+          <header class="sheet__header">
+            <span class="kicker">Cómo aplicarlo</span>
+            <h3 class="sheet__title">Modo de uso</h3>
+          </header>
+
+          <ol class="steps">
+            <li>
+              <h4>Aplica</h4>
+              <p>Coloca una pequeña cantidad de Sirenglow sobre el rostro seco o ligeramente húmedo.</p>
+            </li>
+            <li>
+              <h4>Masajea</h4>
+              <p>Con movimientos circulares suaves para desprender impurezas y restos de maquillaje.</p>
+            </li>
+            <li>
+              <h4>Retira</h4>
+              <p>Con un algodón limpio o enjuaga con agua tibia.</p>
+            </li>
+          </ol>
+        </article>
+
+        <!-- Slide 3: Generalidades + Fórmula -->
+        <article class="sheet" data-title="Generalidades">
+          <header class="sheet__header">
+            <span class="kicker">Información</span>
+            <h3 class="sheet__title">Generalidades & Fórmula</h3>
+          </header>
+
+          <div class="notes">
+            <ul>
+              <li>Solo para uso externo.</li>
+              <li>Evita el contacto con los ojos.</li>
+              <li>Si notas irritación, suspende su uso.</li>
+              <li>Mantén en lugar fresco y fuera del alcance de los niños.</li>
+            </ul>
+          </div>
+
+          <div class="formula">
+            <h4>Fórmula</h4>
+            <p>
+              Aqua, Propylene Glycol, Stearic Acid, Camellia Sinensis Leaf Extract, Petrolatum,
+              Glyceryl Stearate, PEG-40 Hydrogenated Castor Oil, PEG-60 Hydrogenated Castor Oil,
+              Triethanolamine, Oleic Acid, Parfum, Tocopherol, Methylparaben, Propylparaben.
+            </p>
+          </div>
+        </article>
+
+
+
+        <!-- Controles -->
+        <button class="modal__nav modal__nav--prev" id="sheetPrev" aria-label="Anterior">‹</button>
+        <button class="modal__nav modal__nav--next" id="sheetNext" aria-label="Siguiente">›</button>
+      </div>
+
+      <!-- Paginación / tabs -->
+      <div class="tabs" id="sheetTabs"></div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__grid">
       <div class="about">
-        <img src="assets/logo blanco.png" alt="" style="width: 50px;">
-        <h3>Novacare</h3>
-        <p>
-          Elaborado y envasado por NOVACARE, El Salvador.<br>
-          P.º Gral. Escalón 5146, San Salvador, El Salvador.
-        </p>
+        <div class="footer-brand">
+          <img src="assets/logo blanco.png" alt="Novacare" />
+          <h3 class="brand-name">Novacare</h3>
+        </div>
+
+        <p>Elaborado y envasado por NOVACARE, El Salvador.<br>
+          P.º Gral. Escalón 5146, San Salvador, El Salvador.</p>
         <p><strong>Tel:</strong> (+503) 2222-3344</p>
         <p><strong>Correo:</strong> contacto@novacare.com</p>
       </div>
+
 
 
       <form class="newsletter">
