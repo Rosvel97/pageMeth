@@ -505,3 +505,37 @@ a{color:inherit; text-decoration:none}
   .bullet-list li{ font-size: .95rem; line-height: 1.5 }
   .steps li{ font-size: .95rem; }
 }
+
+/* ===== Productos: grid en desktop / carrusel en móvil ===== */
+.products .cards{
+  grid-template-columns: repeat(3, minmax(0,1fr)); /* desktop normal */
+}
+
+/* Carrusel horizontal con snap (tablet y móvil) */
+@media (max-width: 980px){
+  .products .cards{
+    display:flex;
+    overflow-x:auto;
+    gap:16px;
+    padding: 8px 12px 20px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .products .cards::-webkit-scrollbar{ display:none; } /* oculta barra en WebKit */
+  .products .cards{ scrollbar-width:none; }            /* oculta en Firefox */
+
+  .products .card{
+    flex: 0 0 78%;
+    min-width: 78%;
+    scroll-snap-align: start;
+  }
+  .products .card img{ max-height: 220px; object-fit: cover; }
+}
+
+/* Teléfonos angostos */
+@media (max-width: 600px){
+  .products .card{
+    flex-basis: 84%;
+    min-width: 84%;
+  }
+}

@@ -18,7 +18,7 @@
   <header class="header">
     <div class="container nav-center">
       <img src="assets/logo negro.png" alt="logo empresa" style="width: 50px;">
-      <a href="#" class="brand">Laboratorios Novacare</a>
+      <a href="" class="brand">Laboratorios Novacare</a>
     </div>
   </header>
 
@@ -39,18 +39,17 @@
 
 
   <!-- Colección -->
-  <section id="coleccion" class="section">
-    <div class="container">
-      <h2 class="title center">Productos</h2>
-
-      <div class="grid cards">
+<section class="section products" id="productos">
+  <div class="container">
+    <h2 class="title center">Productos</h2>
+    <div class="grid cards">
         <!-- Producto 1 -->
         <article class="card">
           <img src="assets/crema_novamyth.jpg" alt="Vanilla Body Oil" />
           <div class="card__body">
             <h3 class="card__title">Siren Glow</h3>
             <p class="price">$20.00</p>
-            <button class="btn block addCart" data-name="Vanilla Body Oil">Ver mas</button>
+            <a class="btn small scroll-to" href="#siren-glow">Ver más</a>
           </div>
         </article>
 
@@ -108,17 +107,18 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="container botanical">
-      <img src="assets/crema_novamyth.jpg" class="botanical__img" alt="Siren Glow" />
-      <div class="botanical__text">
-        <h2 class="title">Siren Glow</h2>
-        <p>Descubre Sirenglow, nuestra leche limpiadora con extracto de té verde, pensada para limpiar
-          suavemente, revitalizar y dejar la piel radiante.</p>
-        <button class="btn" id="openInfo">Leer más</button>
-      </div>
+<section class="section" id="siren-glow">
+  <div class="container botanical">
+    <img src="assets/crema_novamyth.jpg" class="botanical__img" alt="Siren Glow" />
+    <div class="botanical__text">
+      <h2 class="title">Siren Glow</h2>
+      <p>Descubre Sirenglow, nuestra leche limpiadora con extracto de té verde, pensada para limpiar
+        suavemente, revitalizar y dejar la piel radiante.</p>
+      <button class="btn" id="openInfo">Leer más</button>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Modal responsivo de láminas (contenido web) -->
   <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-label="Información Sirenglow">
