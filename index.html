@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SOVE Skincare — Glow Naturally</title>
-  <meta name="description" content="Skincare landing page con hero, productos, beneficios, testimonios y promociones." />
+  <title>Laboratorios Novacare - Novamyth</title>
+  <meta name="description"
+    content="Skincare landing page con hero, productos, beneficios, testimonios y promociones." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <!-- Announcement bar -->
-  <div class="announce">Obtén <strong>10% OFF</strong> en tu primera compra — usa el código <a href="#" id="copyCode">SALE10</a></div>
+  <div class="announce">Obtén <strong>10% OFF</strong> en tu primera compra — usa el código <a href="#"
+      id="copyCode">NovamythSv</a></div>
 
   <!-- Header / Nav -->
   <header>
     <nav class="nav">
-      <div class="brand"><span class="dot"></span> SOVE</div>
+      <div class="brand"><span class="dot"></span> Novamyth</div>
       <ul>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#beneficios">Novedades</a></li>
@@ -31,39 +35,42 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-left">
-      <span class="eyebrow">Nuevo</span>
-      <h1>Brillo natural para tu piel</h1>
-      <p>Rutinas creadas por dermatólogos. Ingredientes veganos y envases reciclables. Pruébalo hoy y siente la diferencia.</p>
+      <span class="eyebrow">NOVAMYTH · NOVACARE</span>
+      <h1>Leche de limpieza — Siren Glow</h1>
+      <p>Frescura y pureza con extracto de <em>Camellia sinensis</em>. Diseñada para una limpieza que nutre y protege la
+        piel normal y seca.</p>
       <div class="hero-cta">
         <button class="btn primary">Ver nuevos ingresos</button>
         <span class="tag">✨ Envío gratis desde $39</span>
       </div>
     </div>
-    <div class="hero-right"><div class="hero-img" aria-hidden="true"></div></div>
+    <div class="hero-right">
+      <div class="hero-img" style="background-image:url('assets/siren-hero.png')" aria-hidden="true"></div>
+    </div>
   </section>
 
-  <!-- Productos -->
+  <!-- Products / scroller -->
   <section id="productos" class="products">
     <h2 class="section-title">Esenciales de la temporada</h2>
-    <p class="muted">Descubre nuestros best-sellers y arma tu rutina.</p>
+    <p class="muted">Descubre nuestros best‑sellers y arma tu rutina.</p>
     <div class="spacer"></div>
     <div class="product-row">
       <article class="card">
+        <div class="pic" style="background-image:url('assets/siren-pack-front.png')"></div>
+        <h4>Leche de limpieza Siren Glow</h4>
+        <p class="price">$19</p>
+        <div class="cta"><button class="btn primary" data-add>Agregar</button></div>
+      </article>
+      <article class="card">
         <div class="pic" style="background-image:url('https://picsum.photos/seed/toner/600/450')"></div>
         <h4>pH Toner</h4>
-        <p class="price">$19</p>
+        <p class="price">$15</p>
         <div class="cta"><button class="btn primary" data-add>Agregar</button></div>
       </article>
       <article class="card">
         <div class="pic" style="background-image:url('https://picsum.photos/seed/cleanser/600/450')"></div>
         <h4>Oil Cleanser</h4>
         <p class="price">$21</p>
-        <div class="cta"><button class="btn primary" data-add>Agregar</button></div>
-      </article>
-      <article class="card">
-        <div class="pic" style="background-image:url('https://picsum.photos/seed/bundle/600/450')"></div>
-        <h4>Skincare Bundle</h4>
-        <p class="price">$56</p>
         <div class="cta"><button class="btn primary" data-add>Agregar</button></div>
       </article>
       <article class="card">
@@ -75,7 +82,7 @@
     </div>
   </section>
 
-  <!-- Beneficios -->
+  <!-- Benefits -->
   <section id="beneficios">
     <div class="benefits">
       <div class="benefit">
@@ -102,10 +109,25 @@
       <div class="benefit">
         <div class="icon">💖</div>
         <div>
-          <h4>Cruelty-free</h4>
+          <h4>Cruelty‑free</h4>
           <p class="muted">Nunca testeado en animales.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="galeria" class="gallery">
+    <h2 class="section-title">Galería</h2>
+    <div class="gallery-grid">
+      <figure class="shot">
+        <img src="assets/siren-pack-front.png" alt="Siren Glow — empaque frontal" />
+        <figcaption>Empaque frontal</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/siren-box-dieline.png" alt="Siren Glow — diseño de caja (dieline)" />
+        <figcaption>Dieline / Caja</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -114,24 +136,36 @@
     <h2 class="section-title" style="text-align:center">Lo que dicen nuestras clientas</h2>
     <div class="quote-grid">
       <figure class="quote">
-        <div class="who"><div class="avatar" style="background:url('https://i.pravatar.cc/80?img=12') center/cover"></div><figcaption>Patricia — Piel seca</figcaption></div>
+        <div class="who">
+          <div class="avatar" style="background:url('https://i.pravatar.cc/80?img=12') center/cover"></div>
+          <figcaption>Patricia — Piel seca</figcaption>
+        </div>
         <div class="stars">★★★★★</div>
-        <p>El aceite limpiador deja mi piel suave sin resecar. ¡Recomendado!</p>
+        <p>La mejor crema hidratante. ¡Recomendado!</p>
       </figure>
       <figure class="quote">
-        <div class="who"><div class="avatar" style="background:url('https://i.pravatar.cc/80?img=32') center/cover"></div><figcaption>María — Mixta</figcaption></div>
+        <div class="who">
+          <div class="avatar" style="background:url('https://i.pravatar.cc/80?img=32') center/cover"></div>
+          <figcaption>María — Mixta</figcaption>
+        </div>
         <div class="stars">★★★★★</div>
         <p>Noté el glow desde la primera semana. Huele suave y se siente ligero.</p>
       </figure>
       <figure class="quote">
-        <div class="who"><div class="avatar" style="background:url('https://i.pravatar.cc/80?img=5') center/cover"></div><figcaption>Ana — Sensible</figcaption></div>
+        <div class="who">
+          <div class="avatar" style="background:url('https://i.pravatar.cc/80?img=5') center/cover"></div>
+          <figcaption>Ana — Sensible</figcaption>
+        </div>
         <div class="stars">★★★★☆</div>
         <p>Excelente tolerancia. El tónico equilibró mi piel en días.</p>
       </figure>
       <figure class="quote">
-        <div class="who"><div class="avatar" style="background:url('https://i.pravatar.cc/80?img=21') center/cover"></div><figcaption>Sofía — Grasa</figcaption></div>
+        <div class="who">
+          <div class="avatar" style="background:url('https://i.pravatar.cc/80?img=21') center/cover"></div>
+          <figcaption>Sofía — Grasa</figcaption>
+        </div>
         <div class="stars">★★★★★</div>
-        <p>La rutina anti-brillo funciona. Adiós a los parches secos.</p>
+        <p>Recomendado al 100, me encanto la presentacion y el precio</p>
       </figure>
     </div>
   </section>
@@ -142,7 +176,8 @@
     <div class="copy">
       <h2 style="margin:0 0 8px">Restaura tu glow natural</h2>
       <p class="muted">Eleva tu rutina con activos inteligentes y texturas ligeras.</p>
-      <div class="hero-cta"><button class="btn primary">Comienza tu rutina</button><span class="tag">🎁 10% para estudiantes</span></div>
+      <div class="hero-cta"><button class="btn primary">Comienza tu rutina</button><span class="tag">🎁 10% para
+          estudiantes</span></div>
     </div>
   </section>
 
@@ -158,38 +193,38 @@
     </article>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Footer / Contacto -->
+  <footer id="contacto">
     <div class="footer-grid">
       <div class="footer-col">
-        <div class="brand"><span class="dot"></span> SOVE</div>
-        <p class="muted">Cuidado de la piel con fórmulas limpias. Diseñado para brillar.</p>
+        <div class="brand"><span class="dot"></span> NOVACARE</div>
+        <p class="muted">Fórmulas limpias diseñadas para brillar. Producto de venta libre.</p>
+        <p class="muted">P.º Gral. Escalón 5146, San Salvador, El Salvador</p>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <p>Tel.: <a href="tel:+50322223344">(+503) 2222‑3344</a></p>
+        <p>Correo: <a href="mailto:contacto@novacare.com">contacto@novacare.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h5>Información</h5>
+        <p class="muted">Lote: PTLL‑110925</p>
+        <p class="muted">EXP: 09/27</p>
+        <p class="muted">Uso externo · Conservar en lugar fresco y seco.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Redes</h5>
         <div class="social">
           <a aria-label="Instagram" href="#">IG</a>
           <a aria-label="TikTok" href="#">TT</a>
           <a aria-label="YouTube" href="#">YT</a>
         </div>
       </div>
-      <div class="footer-col">
-        <h5>Compañía</h5>
-        <a href="#" class="muted">Nosotros</a><br>
-        <a href="#" class="muted">Blog</a><br>
-        <a href="#" class="muted">Trabaja con nosotros</a>
-      </div>
-      <div class="footer-col">
-        <h5>Ayuda</h5>
-        <a href="#" class="muted">Envíos</a><br>
-        <a href="#" class="muted">Devoluciones</a><br>
-        <a href="#" class="muted">Contacto</a>
-      </div>
-      <div class="footer-col">
-        <h5>Legal</h5>
-        <a href="#" class="muted">Privacidad</a><br>
-        <a href="#" class="muted">Términos</a>
-      </div>
     </div>
   </footer>
 
+
   <script src="app.js"></script>
 </body>
+
 </html>
