@@ -12,7 +12,7 @@ openMenu?.addEventListener('click', () => {
   if (!shown) menu.style.flexDirection = 'column';
 });
 
-// “Carrito” mínimo: solo contador
+// "Carrito" mínimo: solo contador
 const bagCount = document.getElementById('bagCount');
 document.querySelectorAll('.addCart').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -23,7 +23,7 @@ document.querySelectorAll('.addCart').forEach(btn => {
   });
 });
 
-// Newsletter “fake”
+// Newsletter "fake"
 const form = document.getElementById('newsletterForm');
 const newsMsg = document.getElementById('newsMsg');
 form?.addEventListener('submit', (e) => {
@@ -56,94 +56,6 @@ const io = new IntersectionObserver((entries) => {
 document.querySelectorAll('.card, .split__grid, .botanical, .features__grid')
   .forEach(el => io.observe(el));
 
-  // --- Modal Sirenglow (láminas web) ---
-(() => {
-  const btnOpen = document.getElementById('openInfo');
-  const modal = document.getElementById('infoModal');
-  const sheets = [...document.querySelectorAll('.sheet')];
-  const prev = document.getElementById('sheetPrev');
-  const next = document.getElementById('sheetNext');
-  const tabsWrap = document.getElementById('sheetTabs');
-
-  let index = 0, startX = 0;
-
-  const render = () => {
-    sheets.forEach((s,i)=> s.classList.toggle('is-active', i===index));
-    [...tabsWrap.children].forEach((b,i)=> b.classList.toggle('is-active', i===index));
-  };
-
-  const open = () => {
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-    render();
-  };
-  const close = () => {
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-  };
-  const go = (d) => { index = (index + d + sheets.length) % sheets.length; render(); };
-
-  // Construir tabs desde los data-title
-  sheets.forEach((s,i)=>{
-    const b=document.createElement('button');
-    b.textContent = s.dataset.title || `Sección ${i+1}`;
-    b.addEventListener('click', ()=>{ index=i; render(); });
-    tabsWrap.appendChild(b);
-  });
-
-  btnOpen?.addEventListener('click', open);
-  modal?.addEventListener('click', (e)=>{ if(e.target.hasAttribute('data-close-modal')) close(); });
-// backdrop o botón con data-close-modal
-modal?.addEventListener('click', (e)=>{
-  if(e.target.dataset.closeModal !== undefined) close();
-});
-
-document.querySelectorAll('[data-close-modal]').forEach(el=>{
-  el.addEventListener('click', close);
-});
-
-  prev?.addEventListener('click', ()=>go(-1));
-  next?.addEventListener('click', ()=>go(1));
-
-  // Teclado
-  window.addEventListener('keydown', (e)=>{
-    if(!modal.classList.contains('is-open')) return;
-    if(e.key==='Escape') close();
-    if(e.key==='ArrowLeft') go(-1);
-    if(e.key==='ArrowRight') go(1);
-  });
-
-  // Swipe en móvil
-  const stage = document.getElementById('sheets');
-  stage.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
-  stage.addEventListener('touchend', (e)=>{
-    const dx = e.changedTouches[0].clientX - startX;
-    if(Math.abs(dx)>40) go(dx>0?-1:1);
-  }, {passive:true});
-})();
-
-// --- close helpers ---
-const modal = document.getElementById('infoModal');
-const closeModal = () => {
-  modal.classList.remove('is-open');
-  modal.setAttribute('aria-hidden','true');
-  document.body.style.overflow = '';
-};
-
-// cierra al hacer click en el fondo o en cualquier elemento con data-close-modal
-modal.addEventListener('click', (e) => {
-  if (e.target.classList.contains('modal__backdrop')) return closeModal();
-  if (e.target.closest('[data-close-modal]')) return closeModal();
-});
-
-// fallback directo por si algo elimina la delegación
-document.querySelectorAll('[data-close-modal]').forEach(el =>
-  el.addEventListener('click', closeModal)
-);
-
-
 // Scroll animado a secciones
 document.querySelectorAll('a.scroll-to').forEach(link => {
   link.addEventListener('click', e => {
@@ -159,8 +71,11 @@ document.querySelectorAll('a.scroll-to').forEach(link => {
   });
 });
 
+// Carrusel Hero
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('heroTrack');
+  if (!track) return; // Si no hay carrusel, salimos y no rompemos el resto
+
   const slides = Array.from(track.children);
   const prevBtn = document.querySelector('.hero-nav--prev');
   const nextBtn = document.querySelector('.hero-nav--next');
@@ -170,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let autoTimer;
   let startX = 0;
 
-  // Dots
   slides.forEach((_, i) => {
     const b = document.createElement('button');
     b.addEventListener('click', () => goTo(i));
@@ -182,24 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
     [...dotsWrap.children].forEach((d, i) => d.classList.toggle('is-active', i === index));
   };
 
-  const goTo = (i) => {
-    index = (i + slides.length) % slides.length;
-    update();
-    restartAuto();
-  };
+  const goTo = (i) => { index = (i + slides.length) % slides.length; update(); restartAuto(); };
   const next = () => goTo(index + 1);
   const prev = () => goTo(index - 1);
 
-  // Auto-advance (5s)
   const startAuto = () => { autoTimer = setInterval(next, 5000); };
   const stopAuto = () => { clearInterval(autoTimer); };
   const restartAuto = () => { stopAuto(); startAuto(); };
 
-  // Eventos
-  nextBtn.addEventListener('click', next);
-  prevBtn.addEventListener('click', prev);
+  nextBtn?.addEventListener('click', next);
+  prevBtn?.addEventListener('click', prev);
 
-  // Swipe móvil
   track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; stopAuto(); }, { passive:true });
   track.addEventListener('touchend', (e) => {
     const dx = e.changedTouches[0].clientX - startX;
@@ -207,26 +114,157 @@ document.addEventListener('DOMContentLoaded', () => {
     restartAuto();
   }, { passive:true });
 
-  // Inicializar
   update();
   startAuto();
 });
 
-document.addEventListener("click", (e) => {
-  // Abrir
-  if (e.target.matches("[data-open]")) {
-    const id = e.target.getAttribute("data-open");
-    const modal = document.getElementById(id);
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+// ===== SISTEMA DE MODALES UNIFICADO =====
+
+// Función para abrir modal
+function openModal(modal) {
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  initSheetsNavigation(modal);
+}
+
+// Función para cerrar modal
+function closeModal(modal) {
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// Event listener principal para abrir/cerrar modales
+document.addEventListener('click', (e) => {
+  // Abrir modal
+  const openBtn = e.target.closest('[data-open]');
+  if (openBtn) {
+    const modalId = openBtn.getAttribute('data-open');
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      openModal(modal);
+    }
+    return;
   }
 
-  // Cerrar
-  if (e.target.matches("[data-close], [data-close] *")) {
-    const modal = e.target.closest(".modal");
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+  // Cerrar modal (backdrop o botón de cerrar)
+  const closeBtn = e.target.closest('[data-close-modal]');
+  if (closeBtn) {
+    const modal = closeBtn.closest('.modal');
+    if (modal) {
+      closeModal(modal);
+    }
+    return;
+  }
+
+  // Cerrar modal al hacer clic en el backdrop
+  if (e.target.classList.contains('modal__backdrop')) {
+    const modal = e.target.closest('.modal');
+    if (modal) {
+      closeModal(modal);
+    }
   }
 });
+
+// Cerrar modal con tecla ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const openModal = document.querySelector('.modal.is-open');
+    if (openModal) {
+      closeModal(openModal);
+    }
+  }
+});
+
+// Función para inicializar la navegación de sheets en cada modal
+function initSheetsNavigation(modal) {
+  // Evitar inicializar dos veces el mismo modal
+  if (modal.dataset.inited === '1') return;
+  modal.dataset.inited = '1';
+
+  const sheets = Array.from(modal.querySelectorAll('.sheet'));
+  if (!sheets.length) return;
+
+  const tabsWrap = modal.querySelector('.tabs');
+  const prevBtn = modal.querySelector('.modal__nav--prev');
+  const nextBtn = modal.querySelector('.modal__nav--next');
+  const stage = modal.querySelector('.modal__stage');
+
+  let index = sheets.findIndex(s => s.classList.contains('is-active'));
+  if (index < 0) index = 0;
+
+  // Construir tabs
+  if (tabsWrap) {
+    tabsWrap.innerHTML = '';
+    sheets.forEach((sheet, i) => {
+      const button = document.createElement('button');
+      button.textContent = sheet.dataset.title || `Sección ${i + 1}`;
+      button.addEventListener('click', () => {
+        index = i;
+        render();
+      });
+      tabsWrap.appendChild(button);
+    });
+  }
+
+  // Función para actualizar la vista
+  function render() {
+    sheets.forEach((sheet, i) => {
+      sheet.classList.toggle('is-active', i === index);
+    });
+    if (tabsWrap) {
+      [...tabsWrap.children].forEach((tab, i) => {
+        tab.classList.toggle('is-active', i === index);
+      });
+    }
+  }
+
+  // Función para navegar
+  function navigate(delta) {
+    index = (index + delta + sheets.length) % sheets.length;
+    render();
+  }
+
+  // Event listeners para navegación
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => navigate(-1));
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => navigate(1));
+  }
+
+  // Navegación con teclado (solo cuando el modal está abierto)
+  const handleKeyDown = (e) => {
+    if (!modal.classList.contains('is-open')) return;
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+  };
+
+  document.addEventListener('keydown', handleKeyDown);
+
+  // Swipe en móvil
+  let startX = 0;
+  if (stage) {
+    stage.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    stage.addEventListener('touchend', (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      
+      if (Math.abs(diff) > 50) { // mínimo 50px de swipe
+        if (diff > 0) {
+          navigate(1); // swipe left = siguiente
+        } else {
+          navigate(-1); // swipe right = anterior
+        }
+      }
+    }, { passive: true });
+  }
+
+  // Renderizar estado inicial
+  render();
+}

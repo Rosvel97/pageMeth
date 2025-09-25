@@ -136,6 +136,21 @@
     </div>
   </section>
 
+  <section class="section" id="lunaria">
+    <div class="container botanical">
+      <img src="assets/producto1.jpg" class="botanical__img" alt="Lunaria" />
+      <div class="botanical__text">
+        <h2 class="title">Lunaria</h2>
+        <p>Descubre Lunaria, el shampoo blanco perlado aroma a cereza que transforma cada lavado en un ritual mágico,
+          limpiando
+          suavemente y envolviendo tu cabello en un resplandor encantador. 🌙💫
+        </p>
+        <button class="btn" data-open="infolunaria">Leer más</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secciones de Productos -->
   <section class="section" id="siren-glow">
     <div class="container botanical">
       <img src="assets/crema_novamyth.jpg" class="botanical__img" alt="Siren Glow" />
@@ -143,30 +158,18 @@
         <h2 class="title">Siren Glow</h2>
         <p>Descubre Sirenglow, nuestra leche limpiadora con extracto de té verde, pensada para limpiar
           suavemente, revitalizar y dejar la piel radiante.</p>
-        <button class="btn" id="openInfo">Leer más</button>
+        <button class="btn" data-open="infoModal">Leer más</button>
       </div>
     </div>
   </section>
 
-  <section class="section" id="lunaria">
-    <div class="container botanical">
-      <img src="assets/producto1.jpg" class="botanical__img" alt="Siren Glow" />
-      <div class="botanical__text">
-        <h2 class="title">Lunaria</h2>
-        <p>Descubre Lunaria, el shampoo blanco perlado aroma a cereza que transforma cada lavado en un ritual mágico, limpiando
-          suavemente y envolviendo tu cabello en un resplandor encantador. 🌙💫
-        </p>
-        <button class="btn" data-open="openInfo">Leer más</button>
-      </div>
-    </div>
-  </section>
 
-  <!-- Modal responsivo de láminas (contenido web) -->
+
+  <!-- Modal Siren Glow -->
   <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-label="Información Sirenglow">
     <div class="modal__backdrop" data-close-modal></div>
-
     <div class="modal__dialog" role="document">
-
+      <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button>
       <div class="modal__stage sheets" id="sheets">
         <!-- Slide 1: Beneficios -->
         <article class="sheet is-active" data-title="Beneficios">
@@ -174,7 +177,6 @@
             <span class="kicker">Siren Glow</span>
             <h3 class="sheet__title">Beneficios</h3>
           </header>
-
           <div class="sheet__grid">
             <ul class="bullet-list">
               <li><strong>Limpieza suave y efectiva.</strong> Elimina impurezas, exceso de grasa y restos de maquillaje
@@ -191,12 +193,10 @@
                 <span class="badge">No toxico</span>
                 <p>producto no toxico.</p>
               </div>
-
               <div class="fact">
                 <span class="badge">Libre de Crueldad Animal</span>
                 <p>Nunca testeado en animales.</p>
               </div>
-
               <div class="fact">
                 <span class="badge">Sin parabenos</span>
                 <p>Libre de fragancias sintéticas agresivas.</p>
@@ -211,7 +211,6 @@
             <span class="kicker">Cómo aplicarlo</span>
             <h3 class="sheet__title">Modo de uso</h3>
           </header>
-
           <ol class="steps">
             <li>
               <h4>Aplica</h4>
@@ -234,7 +233,6 @@
             <span class="kicker">Información</span>
             <h3 class="sheet__title">Generalidades & Fórmula</h3>
           </header>
-
           <div class="notes">
             <ul>
               <li>Solo para uso externo.</li>
@@ -243,7 +241,6 @@
               <li>Mantén en lugar fresco y fuera del alcance de los niños.</li>
             </ul>
           </div>
-
           <div class="formula">
             <h4>Fórmula</h4>
             <p>
@@ -254,15 +251,197 @@
           </div>
         </article>
 
-
-
         <!-- Controles -->
         <button class="modal__nav modal__nav--prev" id="sheetPrev" aria-label="Anterior">‹</button>
         <button class="modal__nav modal__nav--next" id="sheetNext" aria-label="Siguiente">›</button>
       </div>
-
       <!-- Paginación / tabs -->
       <div class="tabs" id="sheetTabs"></div>
+    </div>
+  </div>
+
+  <!-- Modal: Lunaria -->
+  <div class="modal" id="infolunaria" aria-hidden="true" role="dialog" aria-label="Información Lunaria">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="document">
+      <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button>
+      <div class="modal__stage sheets" id="sheets-lunaria">
+        <!-- Slide 1: Beneficios -->
+        <article class="sheet is-active" data-title="Beneficios">
+          <header class="sheet__header">
+            <span class="kicker">Lunaria</span>
+            <h3 class="sheet__title">Beneficios</h3>
+          </header>
+          <div class="sheet__grid">
+            <ul class="bullet-list">
+              <li><strong>Limpieza capilar suave.</strong> Remueve impurezas sin resecar.</li>
+              <li><strong>Brillo perlado.</strong> Aporta suavidad y luminosidad visibles.</li>
+              <li><strong>Aroma a cereza.</strong> Sensación agradable durante y después del lavado.</li>
+              <li><strong>Para cabello normal a graso.</strong> Ayuda a equilibrar el cuero cabelludo.</li>
+            </ul>
+            <div class="sheet__side">
+              <div class="fact">
+                <span class="badge">Cruelty Free</span>
+                <p>Nunca testeado en animales.</p>
+              </div>
+              <div class="fact">
+                <span class="badge">Sin parabenos</span>
+                <p>Fórmula más limpia y amable con tu rutina.</p>
+              </div>
+              <div class="fact">
+                <span class="badge">Dermatológicamente probado</span>
+                <p>Apto para uso frecuente.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 2: Modo de uso -->
+        <article class="sheet" data-title="Modo de uso">
+          <header class="sheet__header">
+            <span class="kicker">Cómo aplicarlo</span>
+            <h3 class="sheet__title">Modo de uso</h3>
+          </header>
+          <ol class="steps">
+            <li>
+              <h4>Humedece</h4>
+              <p>Moja tu cabello con agua tibia para prepararlo y abrir la fibra capilar.</p>
+            </li>
+            <li>
+              <h4>Aplica</h4>
+              <p>Coloca una pequeña cantidad y masajea suavemente el cuero cabelludo hasta crear una espuma ligera y
+                aromática.</p>
+            </li>
+            <li>
+              <h4>Enjuaga</h4>
+              <p>Retira con abundante agua hasta dejar tu cabello limpio y radiante.</p>
+            </li>
+          </ol>
+        </article>
+
+        <!-- Slide 3: Generalidades + Fórmula -->
+        <article class="sheet" data-title="Generalidades">
+          <header class="sheet__header">
+            <span class="kicker">Información</span>
+            <h3 class="sheet__title">Generalidades & Fórmula</h3>
+          </header>
+          <div class="notes">
+            <ul>
+              <li>Uso externo.</li>
+              <li>Evita el contacto con los ojos.</li>
+              <li>Suspende su uso si notas irritación.</li>
+              <li>Conservar en lugar fresco.</li>
+            </ul>
+          </div>
+          <div class="formula">
+            <h4>Fórmula</h4>
+            <p>
+              Aqua, Sodium laureth sulfate, Glycol distearate,
+              Laureth-4 Cocamidopropyl betaine, Propylene
+              glycol Cocamide dea, Sodium chloride, Parfum,
+              Colorant (red), Citric acid 5-Bromo-5-nitro-13-
+              dioxane, Disodium edta.
+            </p>
+          </div>
+        </article>
+
+        <!-- Controles -->
+        <button class="modal__nav modal__nav--prev" id="sheetPrev-lunaria" aria-label="Anterior">‹</button>
+        <button class="modal__nav modal__nav--next" id="sheetNext-lunaria" aria-label="Siguiente">›</button>
+      </div>
+      <!-- Paginación / tabs -->
+      <div class="tabs" id="sheetTabs-lunaria"></div>
+    </div>
+  </div>
+
+  <!-- Modal: Perlasol -->
+  <div class="modal" id="modal-perlasol" aria-hidden="true" role="dialog" aria-label="Información Perlasol">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="document">
+      <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button>
+      <div class="modal__stage sheets" id="sheets-perlasol">
+        <!-- Slide 1: Beneficios -->
+        <article class="sheet is-active" data-title="Beneficios">
+          <header class="sheet__header">
+            <span class="kicker">Perlasol</span>
+            <h3 class="sheet__title">Beneficios</h3>
+          </header>
+          <div class="sheet__grid">
+            <ul class="bullet-list">
+              <li><strong>Protección diaria.</strong> Ideal para exposición urbana.</li>
+              <li><strong>Textura ligera.</strong> Acabado confortable sin residuo pesado.</li>
+              <li><strong>Hidratación equilibrada.</strong> Confort durante todo el día.</li>
+              <li><strong>Uso cotidiano.</strong> Apto para diferentes tipos de piel.</li>
+            </ul>
+            <div class="sheet__side">
+              <div class="fact">
+                <span class="badge">Cruelty Free</span>
+                <p>Compromiso con el bienestar animal.</p>
+              </div>
+              <div class="fact">
+                <span class="badge">Sin parabenos</span>
+                <p>Fórmula cuidada y moderna.</p>
+              </div>
+              <div class="fact">
+                <span class="badge">No comedogénico</span>
+                <p>No obstruye poros.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 2: Modo de uso -->
+        <article class="sheet" data-title="Modo de uso">
+          <header class="sheet__header">
+            <span class="kicker">Cómo aplicarlo</span>
+            <h3 class="sheet__title">Modo de uso</h3>
+          </header>
+          <ol class="steps">
+            <li>
+              <h4>Prepara</h4>
+              <p>Con la piel limpia y seca, aplica la cantidad necesaria.</p>
+            </li>
+            <li>
+              <h4>Extiende</h4>
+              <p>Distribuye de forma uniforme en rostro y cuello.</p>
+            </li>
+            <li>
+              <h4>Reaplica</h4>
+              <p>Reaplica según necesidad durante el día.</p>
+            </li>
+          </ol>
+        </article>
+
+        <!-- Slide 3: Generalidades + Fórmula -->
+        <article class="sheet" data-title="Generalidades">
+          <header class="sheet__header">
+            <span class="kicker">Información</span>
+            <h3 class="sheet__title">Generalidades & Fórmula</h3>
+          </header>
+          <div class="notes">
+            <ul>
+              <li>Uso externo.</li>
+              <li>Evitar contacto con los ojos.</li>
+              <li>Suspender uso si hay irritación.</li>
+              <li>Almacenar en lugar fresco.</li>
+            </ul>
+          </div>
+          <div class="formula">
+            <h4>Fórmula</h4>
+            <p>
+              Aqua, Glycerin, Caprylic/Capric Triglyceride, Cetearyl Alcohol,
+              Glyceryl Stearate, Butyrospermum Parkii Butter, Tocopherol,
+              Phenoxyethanol, Ethylhexylglycerin, Parfum.
+            </p>
+          </div>
+        </article>
+
+        <!-- Controles -->
+        <button class="modal__nav modal__nav--prev" id="sheetPrev-perlasol" aria-label="Anterior">‹</button>
+        <button class="modal__nav modal__nav--next" id="sheetNext-perlasol" aria-label="Siguiente">›</button>
+      </div>
+      <!-- Paginación / tabs -->
+      <div class="tabs" id="sheetTabs-perlasol"></div>
     </div>
   </div>
 
