@@ -551,3 +551,66 @@ a{color:inherit; text-decoration:none}
     flex-wrap: wrap;         /* permite que bajen de línea si no caben */
   }
 }
+
+/* ===== Carrusel de héroes ===== */
+.hero-slider{
+  position:relative;
+  overflow:hidden;
+}
+.hero-track{
+  display:flex;
+  width:100%;
+  will-change: transform;
+  transition: transform .6s ease;
+}
+.hero-slider .hero-card{
+  flex: 0 0 100%;
+  min-width: 100%;
+}
+
+/* Flechas */
+.hero-nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  z-index:2;
+  width:44px; height:44px; border:none; border-radius:50%;
+  display:grid; place-items:center;
+  background:rgba(0,0,0,.28); color:#fff;
+  font-size:28px; line-height:1; cursor:pointer;
+}
+.hero-nav:hover{ background:rgba(0,0,0,.38) }
+.hero-nav--prev{ left:10px }
+.hero-nav--next{ right:10px }
+
+/* Dots */
+.hero-dots{
+  position:absolute; left:50%; bottom:14px; transform:translateX(-50%);
+  display:flex; gap:8px; z-index:2;
+}
+.hero-dots button{
+  width:10px; height:10px; border-radius:50%; border:0; cursor:pointer;
+  background: rgba(255,255,255,.45);
+}
+.hero-dots button.is-active{ background:#fff }
+@media (max-width:600px){
+  .hero-nav{ width:38px; height:38px; font-size:24px }
+}
+
+.hero-card{
+  background-repeat: no-repeat;
+  background-size: contain;         /* La imagen mantiene proporción */
+  background-position: center;      /* Centrada */
+  background-color: #d9cce3;        /* Color de relleno en los lados */
+}
+
+/* Fondos específicos */
+.hero-card.bg1{
+  background-image: url('assets/modelshampo.jpg');
+    background-color: #dfd3bb; 
+}
+.hero-card.bg2{
+  background-image: url('assets/model2.jpg');
+    background-color: #d6c9d3;
+}
+/* .hero-card.bg3{
+  background-image: url('assets/model3.jpg');
+} */

@@ -158,3 +158,75 @@ document.querySelectorAll('a.scroll-to').forEach(link => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('heroTrack');
+  const slides = Array.from(track.children);
+  const prevBtn = document.querySelector('.hero-nav--prev');
+  const nextBtn = document.querySelector('.hero-nav--next');
+  const dotsWrap = document.getElementById('heroDots');
+
+  let index = 0;
+  let autoTimer;
+  let startX = 0;
+
+  // Dots
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(b);
+  });
+
+  const update = () => {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    [...dotsWrap.children].forEach((d, i) => d.classList.toggle('is-active', i === index));
+  };
+
+  const goTo = (i) => {
+    index = (i + slides.length) % slides.length;
+    update();
+    restartAuto();
+  };
+  const next = () => goTo(index + 1);
+  const prev = () => goTo(index - 1);
+
+  // Auto-advance (5s)
+  const startAuto = () => { autoTimer = setInterval(next, 5000); };
+  const stopAuto = () => { clearInterval(autoTimer); };
+  const restartAuto = () => { stopAuto(); startAuto(); };
+
+  // Eventos
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+
+  // Swipe móvil
+  track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; stopAuto(); }, { passive:true });
+  track.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) (dx < 0 ? next() : prev());
+    restartAuto();
+  }, { passive:true });
+
+  // Inicializar
+  update();
+  startAuto();
+});
+
+document.addEventListener("click", (e) => {
+  // Abrir
+  if (e.target.matches("[data-open]")) {
+    const id = e.target.getAttribute("data-open");
+    const modal = document.getElementById(id);
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  // Cerrar
+  if (e.target.matches("[data-close], [data-close] *")) {
+    const modal = e.target.closest(".modal");
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+});

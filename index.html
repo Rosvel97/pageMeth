@@ -22,43 +22,72 @@
     </div>
   </header>
 
-  <section class="hero-card" style="background-image:url('assets/model2.jpg')">
-    <div class="overlay">
-      <!-- Texto inferior izquierdo -->
-      <div class="hero-info">
-        <h2 class="display">Novamyth</h2>
-        <p>
-          Es una marca de cosmética creada para resaltar la belleza natural a través de fórmulas inspiradas en
-          la ciencia y la naturaleza. Nuestro compromiso es ofrecer productos seguros, eficaces y agradables, que
-          acompañen cada rutina de cuidado de la piel con un toque de frescura y bienestar.
-        </p>
+  <section class="hero-slider" aria-label="Destacados">
+    <button class="hero-nav hero-nav--prev" aria-label="Anterior">‹</button>
+    <div class="hero-track" id="heroTrack">
+
+      <!-- Slide 1 -->
+      <section class="hero-card bg1">
+        <div class="overlay">
+          <div class="hero-info">
+            <h2 class="display">Novamyth</h2>
+            <p>Es una marca de cosmética creada para resaltar la belleza natural a través de fórmulas inspiradas en la
+              ciencia y la naturaleza. Nuestro compromiso es ofrecer productos seguros, eficaces y agradables, que
+              acompañen cada rutina de cuidado de la piel con un toque de frescura y bienestar.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 2 -->
+      <section class="hero-card bg2">
+        <div class="overlay">
+          <div class="hero-info">
+            <h2 class="display">Novamyth</h2>
+            <p>Es una marca de cosmética creada para resaltar la belleza natural a través de fórmulas inspiradas en la
+              ciencia y la naturaleza. Nuestro compromiso es ofrecer productos seguros, eficaces y agradables, que
+              acompañen cada rutina de cuidado de la piel con un toque de frescura y bienestar.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3
+    <section class="hero-card bg3">
+      <div class="overlay">
+        <div class="hero-info">
+          <h2 class="display">Lunaria</h2>
+          <p>Shampoo perlado aroma a cereza, ideal para cabello normal o graso.</p>
+        </div>
       </div>
+    </section> -->
+
     </div>
+    <button class="hero-nav hero-nav--next" aria-label="Siguiente">›</button>
+    <div class="hero-dots" id="heroDots"></div>
   </section>
 
 
-
   <!-- Colección -->
-<section class="section products" id="productos">
-  <div class="container">
-    <h2 class="title center">Productos</h2>
-    <div class="grid cards">
+  <section class="section products" id="productos">
+    <div class="container">
+      <h2 class="title center">Productos</h2>
+      <div class="grid cards">
         <!-- Producto 1 -->
         <article class="card">
-          <img src="assets/crema_novamyth.jpg" alt="Vanilla Body Oil" />
+          <img src="assets/producto1.jpg" alt="Vanilla Body Oil" />
           <div class="card__body">
-            <h3 class="card__title">Siren Glow</h3>
-            <p class="price">$20.00</p>
-            <a class="btn small scroll-to" href="#siren-glow">Ver más</a>
+            <h3 class="card__title">Lunaria</h3>
+            <p class="price">$14.95</p>
+            <a class="btn small scroll-to" href="#lunaria">Ver más</a>
           </div>
         </article>
 
         <!-- Producto 2 -->
         <article class="card">
-          <img src="assets/producto2.jpg" alt="Orange Body Oil" />
+          <img src="assets/crema_novamyth.jpg" alt="Orange Body Oil" />
           <div class="card__body">
-            <h3 class="card__title">Muy pronto</h3>
-            <!-- <button class="btn block addCart" data-name="Orange Body Oil">Agregar</button> -->
+            <h3 class="card__title">Siren Glow</h3>
+            <p class="price">$20.00</p>
+            <a class="btn small scroll-to" href="#siren-glow">Ver más</a>
           </div>
         </article>
 
@@ -107,18 +136,30 @@
     </div>
   </section>
 
-<section class="section" id="siren-glow">
-  <div class="container botanical">
-    <img src="assets/crema_novamyth.jpg" class="botanical__img" alt="Siren Glow" />
-    <div class="botanical__text">
-      <h2 class="title">Siren Glow</h2>
-      <p>Descubre Sirenglow, nuestra leche limpiadora con extracto de té verde, pensada para limpiar
-        suavemente, revitalizar y dejar la piel radiante.</p>
-      <button class="btn" id="openInfo">Leer más</button>
+  <section class="section" id="siren-glow">
+    <div class="container botanical">
+      <img src="assets/crema_novamyth.jpg" class="botanical__img" alt="Siren Glow" />
+      <div class="botanical__text">
+        <h2 class="title">Siren Glow</h2>
+        <p>Descubre Sirenglow, nuestra leche limpiadora con extracto de té verde, pensada para limpiar
+          suavemente, revitalizar y dejar la piel radiante.</p>
+        <button class="btn" id="openInfo">Leer más</button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <section class="section" id="lunaria">
+    <div class="container botanical">
+      <img src="assets/producto1.jpg" class="botanical__img" alt="Siren Glow" />
+      <div class="botanical__text">
+        <h2 class="title">Lunaria</h2>
+        <p>Descubre Lunaria, el shampoo blanco perlado aroma a cereza que transforma cada lavado en un ritual mágico, limpiando
+          suavemente y envolviendo tu cabello en un resplandor encantador. 🌙💫
+        </p>
+        <button class="btn" data-open="openInfo">Leer más</button>
+      </div>
+    </div>
+  </section>
 
   <!-- Modal responsivo de láminas (contenido web) -->
   <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-label="Información Sirenglow">
@@ -242,44 +283,41 @@
 
 
 
-<form id="newsForm" class="newsletter">
-  <h4>Suscríbete</h4>
-  <div class="newsletter__row">
-    <input type="email" name="email" required />
-    <button class="btn small" type="submit">Enviar</button>
-  </div>
-<div class="social">
-  <h4>Síguenos</h4>
-  <div class="social__icons" style="display:flex; gap:14px; margin-top:10px;">
+      <form id="newsForm" class="newsletter">
+        <h4>Suscríbete</h4>
+        <div class="newsletter__row">
+          <input type="email" name="email" required />
+          <button class="btn small" type="submit">Enviar</button>
+        </div>
+        <div class="social">
+          <h4>Síguenos</h4>
+          <div class="social__icons" style="display:flex; gap:14px; margin-top:10px;">
 
-    <!-- Facebook -->
-    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" 
-           alt="Facebook logo"
-           style="width:36px; height:36px; filter:invert(100%) brightness(200%);" />
-    </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook logo"
+                style="width:36px; height:36px; filter:invert(100%) brightness(200%);" />
+            </a>
 
-    <!-- Instagram -->
-    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" 
-           alt="Instagram logo"
-           style="width:36px; height:36px; filter:invert(100%) brightness(200%);" />
-    </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram logo"
+                style="width:36px; height:36px; filter:invert(100%) brightness(200%);" />
+            </a>
 
-    <!-- TikTok -->
-    <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" 
-           alt="TikTok logo"
-           style="width:36px; height:36px; filter:invert(100%) brightness(200%);" />
-    </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok logo"
+                style="width:36px; height:36px; filter:invert(100%) brightness(200%);" />
+            </a>
 
-  </div>
-</div>
+          </div>
+        </div>
 
 
-</form>
-      
-</div>
+      </form>
+
+    </div>
 
     </div>
 
