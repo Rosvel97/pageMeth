@@ -262,7 +262,7 @@ function initSheetsNavigation(modal) {
 // ===== Envío de correo con EmailJS =====
 
 // Inicializa EmailJS (usa tu PUBLIC_KEY real)
-emailjs.init("service_4bsexce");
+emailjs.init("N9A9v5ExIHWRWMs2J");
 
 // Referencias al formulario y al mensaje de salida
 const newsForm = document.getElementById("newsForm");
@@ -284,7 +284,7 @@ newsForm.addEventListener("submit", function (e) {
 
   // Envío mediante EmailJS
   emailjs
-    .send("TU_SERVICE_ID", "TU_TEMPLATE_ID", {
+    .send("service_4bsexce", "template_afnsi46", {
       to_email: email, // debe coincidir con {{to_email}} en tu plantilla
     })
     .then(() => {
