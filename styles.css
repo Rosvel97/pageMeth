@@ -614,3 +614,71 @@ a{color:inherit; text-decoration:none}
 /* .hero-card.bg3{
   background-image: url('assets/model3.jpg');
 } */
+/* ===== NAVBAR ===== */
+.header {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  background: #fff; /* mantiene tu color */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Contenedor general */
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bloque de marca */
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* logo a la izquierda */
+  gap: 10px;
+  text-align: left;
+}
+
+/* Logo */
+.brand img {
+  height: 52px;
+  width: auto;
+}
+
+/* Texto */
+.brand span {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--blue-900);
+  white-space: nowrap;
+}
+
+/* Ajustes en pantallas pequeñas */
+@media (max-width: 600px) {
+  .brand img {
+    height: 42px;
+  }
+
+  .brand span {
+    font-size: 1.4rem;
+  }
+}
+
+/* Pantallas muy pequeñas (S24, iPhone mini, etc.) */
+@media (max-width: 400px) {
+  .brand {
+    gap: 8px;
+  }
+  .brand span {
+    font-size: 1.2rem;
+  }
+}
+
+#newsMsg {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #22334E;
+  transition: opacity 0.3s ease;
+}

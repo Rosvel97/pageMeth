@@ -23,16 +23,6 @@ document.querySelectorAll('.addCart').forEach(btn => {
   });
 });
 
-// Newsletter "fake"
-const form = document.getElementById('newsletterForm');
-const newsMsg = document.getElementById('newsMsg');
-form?.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = form.email.value.trim();
-  if (!email) return;
-  newsMsg.textContent = `¡Gracias! Te escribiremos a ${email}.`;
-  form.reset();
-});
 
 // Pequeña animación al entrar en viewport
 const reveal = (el) => {
@@ -268,3 +258,40 @@ function initSheetsNavigation(modal) {
   // Renderizar estado inicial
   render();
 }
+
+// ===== Envío de correo con EmailJS =====
+
+// Inicializa EmailJS (usa tu PUBLIC_KEY real)
+emailjs.init("service_4bsexce");
+
+// Referencias al formulario y al mensaje de salida
+const newsForm = document.getElementById("newsForm");
+const newsMsg = document.createElement("p");
+newsMsg.style.marginTop = "8px";
+newsMsg.style.fontSize = "0.95rem";
+newsMsg.style.color = "#fff";
+newsForm.appendChild(newsMsg);
+
+newsForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const emailInput = newsForm.querySelector("input[name='email']");
+  const email = emailInput.value.trim();
+  if (!email) return;
+
+  // Mensaje temporal
+  newsMsg.textContent = "Enviando correo...";
+
+  // Envío mediante EmailJS
+  emailjs
+    .send("TU_SERVICE_ID", "TU_TEMPLATE_ID", {
+      to_email: email, // debe coincidir con {{to_email}} en tu plantilla
+    })
+    .then(() => {
+      newsMsg.textContent = "✅ ¡Gracias por suscribirte! Te enviamos un correo de bienvenida.";
+      emailInput.value = "";
+    })
+    .catch(() => {
+      newsMsg.textContent = "⚠️ Hubo un problema al enviar el correo. Inténtalo de nuevo.";
+    });
+});

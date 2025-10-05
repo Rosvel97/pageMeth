@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Novacare - Novamyth</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" type="image/png" href="assets/logo blanco.png" />
+  <link rel="icon" type="image/png" href="assets/logo_blanco.png" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
@@ -16,11 +16,14 @@
 <body>
   <!-- Navbar -->
   <header class="header">
-    <div class="container nav-center">
-      <img src="assets/logo negro.png" alt="logo empresa" style="width: 50px;">
-      <a href="" class="brand">Laboratorios Novacare</a>
-    </div>
-  </header>
+  <div class="nav-center">
+    <a href="#" class="brand">
+      <img src="assets/logo_negro.png" alt="Logo Novacare">
+      <span>Laboratorios Novacare</span>
+    </a>
+  </div>
+</header>
+
 
   <section class="hero-slider" aria-label="Destacados">
     <button class="hero-nav hero-nav--prev" aria-label="Anterior">‹</button>
@@ -169,7 +172,7 @@
   <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-label="Información Sirenglow">
     <div class="modal__backdrop" data-close-modal></div>
     <div class="modal__dialog" role="document">
-      <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button>
+      <!-- <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button> -->
       <div class="modal__stage sheets" id="sheets">
         <!-- Slide 1: Beneficios -->
         <article class="sheet is-active" data-title="Beneficios">
@@ -264,7 +267,7 @@
   <div class="modal" id="infolunaria" aria-hidden="true" role="dialog" aria-label="Información Lunaria">
     <div class="modal__backdrop" data-close-modal></div>
     <div class="modal__dialog" role="document">
-      <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button>
+      <!-- <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button> -->
       <div class="modal__stage sheets" id="sheets-lunaria">
         <!-- Slide 1: Beneficios -->
         <article class="sheet is-active" data-title="Beneficios">
@@ -358,7 +361,7 @@
   <div class="modal" id="modal-perlasol" aria-hidden="true" role="dialog" aria-label="Información Perlasol">
     <div class="modal__backdrop" data-close-modal></div>
     <div class="modal__dialog" role="document">
-      <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button>
+      <!-- <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button> -->
       <div class="modal__stage sheets" id="sheets-perlasol">
         <!-- Slide 1: Beneficios -->
         <article class="sheet is-active" data-title="Beneficios">
@@ -450,7 +453,7 @@
     <div class="container footer__grid">
       <div class="about">
         <div class="footer-brand">
-          <img src="assets/logo blanco.png" alt="Novacare" />
+          <img src="assets/logo_blanco.png" alt="Novacare" />
           <h3 class="brand-name">Novacare</h3>
         </div>
 
@@ -507,6 +510,7 @@
 
 
   <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </body>
 
 </html>
