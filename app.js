@@ -295,3 +295,4 @@ newsForm.addEventListener("submit", function (e) {
       newsMsg.textContent = "⚠️ Hubo un problema al enviar el correo. Inténtalo de nuevo.";
     });
 });
+

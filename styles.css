@@ -611,9 +611,9 @@ a{color:inherit; text-decoration:none}
   background-image: url('assets/model2.jpg');
     background-color: #d6c9d3;
 }
-/* .hero-card.bg3{
-  background-image: url('assets/model3.jpg');
-} */
+.hero-card.bg3{
+  background-image: url('assets/model3.png');
+    background-color: #a2d7e9;}
 /* ===== NAVBAR ===== */
 .header {
   padding: 14px 20px;

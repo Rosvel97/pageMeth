@@ -16,18 +16,30 @@
 <body>
   <!-- Navbar -->
   <header class="header">
-  <div class="nav-center">
-    <a href="#" class="brand">
-      <img src="assets/logo_negro.png" alt="Logo Novacare">
-      <span>Laboratorios Novacare</span>
-    </a>
-  </div>
-</header>
+    <div class="nav-center">
+      <a href="#" class="brand">
+        <img src="assets/logo_negro.png" alt="Logo Novacare">
+        <span>Laboratorios Novacare</span>
+      </a>
+    </div>
+  </header>
 
 
   <section class="hero-slider" aria-label="Destacados">
     <button class="hero-nav hero-nav--prev" aria-label="Anterior">‹</button>
     <div class="hero-track" id="heroTrack">
+
+     <!-- Slide 3 -->
+    <section class="hero-card bg3">
+      <div class="overlay">
+        <div class="hero-info">
+           <h2 class="display">Novamyth</h2>
+            <p>Es una marca de cosmética creada para resaltar la belleza natural a través de fórmulas inspiradas en la
+              ciencia y la naturaleza. Nuestro compromiso es ofrecer productos seguros, eficaces y agradables, que
+              acompañen cada rutina de cuidado de la piel con un toque de frescura y bienestar.</p>
+        </div>
+      </div>
+    </section>
 
       <!-- Slide 1 -->
       <section class="hero-card bg1">
@@ -53,15 +65,7 @@
         </div>
       </section>
 
-      <!-- Slide 3
-    <section class="hero-card bg3">
-      <div class="overlay">
-        <div class="hero-info">
-          <h2 class="display">Lunaria</h2>
-          <p>Shampoo perlado aroma a cereza, ideal para cabello normal o graso.</p>
-        </div>
-      </div>
-    </section> -->
+ 
 
     </div>
     <button class="hero-nav hero-nav--next" aria-label="Siguiente">›</button>
@@ -74,6 +78,18 @@
     <div class="container">
       <h2 class="title center">Productos</h2>
       <div class="grid cards">
+
+        <!-- Producto 3 -->
+        <article class="card">
+          <img src="assets/arkena.png" alt="Orange Body Oil" />
+          <div class="card__body">
+            <h3 class="card__title">Arkena</h3>
+            <p class="price">$17.00</p>
+            <a class="btn small scroll-to" href="#arkena">Ver más</a>
+          </div>
+        </article>
+
+
         <!-- Producto 1 -->
         <article class="card">
           <img src="assets/producto1.jpg" alt="Vanilla Body Oil" />
@@ -94,14 +110,7 @@
           </div>
         </article>
 
-        <!-- Producto 3 -->
-        <article class="card">
-          <img src="assets/producto3.jpg" alt="Lavender Body Oil" />
-          <div class="card__body">
-            <h3 class="card__title">Muy pronto</h3>
-            <!-- <button class="btn block addCart" data-name="Lavender Body Oil">Agregar</button> -->
-          </div>
-        </article>
+        
       </div>
     </div>
   </section>
@@ -138,6 +147,22 @@
       </div>
     </div>
   </section>
+
+  <section class="section" id="arkena">
+    <div class="container botanical">
+      <img src="assets/arkena2.png" class="botanical__img" alt="Lunaria" />
+      <div class="botanical__text">
+        <h2 class="title">Arkena</h2>
+        <p>Descubre Arkena, Desodorante en barra con acción
+          antibacterial que ayuda a controlar el mal
+          olor. Deja una sensación limpia y cómoda,
+          cuidando la piel sin resecarla.🌙💫
+        </p>
+        <button class="btn" data-open="infoarkena">Leer más</button>
+      </div>
+    </div>
+  </section>
+
 
   <section class="section" id="lunaria">
     <div class="container botanical">
@@ -357,24 +382,25 @@
     </div>
   </div>
 
-  <!-- Modal: Perlasol -->
-  <div class="modal" id="modal-perlasol" aria-hidden="true" role="dialog" aria-label="Información Perlasol">
+  <!-- Modal: arkena -->
+  <div class="modal" id="infoarkena" aria-hidden="true" role="dialog" aria-label="Información arkena">
     <div class="modal__backdrop" data-close-modal></div>
     <div class="modal__dialog" role="document">
       <!-- <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button> -->
-      <div class="modal__stage sheets" id="sheets-perlasol">
+      <div class="modal__stage sheets" id="sheets-arkena">
         <!-- Slide 1: Beneficios -->
         <article class="sheet is-active" data-title="Beneficios">
           <header class="sheet__header">
-            <span class="kicker">Perlasol</span>
+            <span class="kicker">Arkena</span>
             <h3 class="sheet__title">Beneficios</h3>
           </header>
           <div class="sheet__grid">
             <ul class="bullet-list">
-              <li><strong>Protección diaria.</strong> Ideal para exposición urbana.</li>
-              <li><strong>Textura ligera.</strong> Acabado confortable sin residuo pesado.</li>
-              <li><strong>Hidratación equilibrada.</strong> Confort durante todo el día.</li>
-              <li><strong>Uso cotidiano.</strong> Apto para diferentes tipos de piel.</li>
+              <li><strong>Acción antibacterial.</strong> Ayuda a controlar el mal olor causado por bacterias.</li>
+              <li><strong>Protección prolongada.</strong> Mantiene una sensación fresca y limpia durante todo el día.
+              </li>
+              <li><strong>Fórmula suave.</strong> Protege la piel sin resecarla ni causar irritación.</li>
+              <li><strong>Textura cómoda.</strong> Deja la piel seca, cuidada y con un aroma agradable.</li>
             </ul>
             <div class="sheet__side">
               <div class="fact">
@@ -386,8 +412,8 @@
                 <p>Fórmula cuidada y moderna.</p>
               </div>
               <div class="fact">
-                <span class="badge">No comedogénico</span>
-                <p>No obstruye poros.</p>
+                <span class="badge">Sin alcohol</span>
+                <p>Ideal para pieles sensibles.</p>
               </div>
             </div>
           </div>
@@ -401,16 +427,16 @@
           </header>
           <ol class="steps">
             <li>
-              <h4>Prepara</h4>
-              <p>Con la piel limpia y seca, aplica la cantidad necesaria.</p>
+              <h4>Aplica</h4>
+              <p>Directamente sobre la piel limpia y seca, preferiblemente después del baño.</p>
             </li>
             <li>
-              <h4>Extiende</h4>
-              <p>Distribuye de forma uniforme en rostro y cuello.</p>
+              <h4>Evita zonas irritadas</h4>
+              <p>No aplicar sobre piel lesionada o enrojecida.</p>
             </li>
             <li>
-              <h4>Reaplica</h4>
-              <p>Reaplica según necesidad durante el día.</p>
+              <h4>Permite secar</h4>
+              <p>Deja que el producto se absorba completamente antes de vestirte.</p>
             </li>
           </ol>
         </article>
@@ -421,30 +447,28 @@
             <span class="kicker">Información</span>
             <h3 class="sheet__title">Generalidades & Fórmula</h3>
           </header>
-          <div class="notes">
+          <div class="notes" style="margin-top:15px;">
             <ul>
-              <li>Uso externo.</li>
-              <li>Evitar contacto con los ojos.</li>
-              <li>Suspender uso si hay irritación.</li>
-              <li>Almacenar en lugar fresco.</li>
+              <li>Descontinúa su uso en caso de irritación o molestia.</li>
+              <li>Mantener fuera del alcance de los niños.</li>
+              <li>Conservar en un lugar fresco y seco.</li>
             </ul>
           </div>
           <div class="formula">
             <h4>Fórmula</h4>
             <p>
-              Aqua, Glycerin, Caprylic/Capric Triglyceride, Cetearyl Alcohol,
-              Glyceryl Stearate, Butyrospermum Parkii Butter, Tocopherol,
-              Phenoxyethanol, Ethylhexylglycerin, Parfum.
+              <strong>Ingredientes:</strong><br>
+              Glycerin, Propylene Glycol, Stearic Acid, Parfum, Sodium Hydroxide, Hexachlorophene.
             </p>
           </div>
         </article>
 
         <!-- Controles -->
-        <button class="modal__nav modal__nav--prev" id="sheetPrev-perlasol" aria-label="Anterior">‹</button>
-        <button class="modal__nav modal__nav--next" id="sheetNext-perlasol" aria-label="Siguiente">›</button>
+        <button class="modal__nav modal__nav--prev" id="sheetPrev-arkena" aria-label="Anterior">‹</button>
+        <button class="modal__nav modal__nav--next" id="sheetNext-arkena" aria-label="Siguiente">›</button>
       </div>
       <!-- Paginación / tabs -->
-      <div class="tabs" id="sheetTabs-perlasol"></div>
+      <div class="tabs" id="sheetTabs-arkena"></div>
     </div>
   </div>
 
