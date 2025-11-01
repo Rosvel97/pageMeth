@@ -614,6 +614,11 @@ a{color:inherit; text-decoration:none}
 .hero-card.bg3{
   background-image: url('assets/model3.png');
     background-color: #a2d7e9;}
+
+.hero-card.bg4{
+  background-image: url('assets/odin.png');
+  background-color: #ffffff;}
+  
 /* ===== NAVBAR ===== */
 .header {
   padding: 14px 20px;

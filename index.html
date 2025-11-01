@@ -28,6 +28,18 @@
   <section class="hero-slider" aria-label="Destacados">
     <button class="hero-nav hero-nav--prev" aria-label="Anterior">‹</button>
     <div class="hero-track" id="heroTrack">
+  <!-- Slide 4 -->
+    <section class="hero-card bg4">
+      <div class="overlay">
+        <div class="hero-info">
+           <h2 class="display">Novamyth</h2>
+            <p>Es una marca de cosmética creada para resaltar la belleza natural a través de fórmulas inspiradas en la
+              ciencia y la naturaleza. Nuestro compromiso es ofrecer productos seguros, eficaces y agradables, que
+              acompañen cada rutina de cuidado de la piel con un toque de frescura y bienestar.</p>
+        </div>
+      </div>
+    </section>
+
 
      <!-- Slide 3 -->
     <section class="hero-card bg3">
@@ -78,6 +90,17 @@
     <div class="container">
       <h2 class="title center">Productos</h2>
       <div class="grid cards">
+
+      <!-- Producto 4 -->
+        <article class="card">
+          <img src="assets/odin.png" alt="Orange Body Oil" />
+          <div class="card__body">
+            <h3 class="card__title">Odin</h3>
+            <p class="price">$14.99</p>
+            <a class="btn small scroll-to" href="#odin">Ver más</a>
+          </div>
+        </article>
+
 
         <!-- Producto 3 -->
         <article class="card">
@@ -147,6 +170,19 @@
       </div>
     </div>
   </section>
+
+<section class="section" id="odin">
+      <div class="container botanical">
+      <img src="assets/odin.png" class="botanical__img" alt="Odin" />
+      <div class="botanical__text">
+        <h2 class="title">Odin</h2>
+        <p>Formula con extractos naturales de menta y eucalipto para un afeitado suave, preciso y revitalizante. Hidrata, protege t deja una sensación de frescura duradera.
+        </p>
+        <button class="btn" data-open="infodin">Leer más</button>
+      </div>
+    </div>
+  </section>
+
 
   <section class="section" id="arkena">
     <div class="container botanical">
@@ -381,6 +417,101 @@
       <div class="tabs" id="sheetTabs-lunaria"></div>
     </div>
   </div>
+
+  <!-- Modal: arkena -->
+  <div class="modal" id="infodin" aria-hidden="true" role="dialog" aria-label="Información arkena">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="document">
+      <!-- <button class="modal__close" aria-label="Cerrar" data-close-modal>×</button> -->
+      <div class="modal__stage sheets" id="sheets-arkena">
+        <!-- Slide 1: Beneficios -->
+        <article class="sheet is-active" data-title="Beneficios">
+          <header class="sheet__header">
+            <span class="kicker">Odin</span>
+            <h3 class="sheet__title">Beneficios</h3>
+          </header>
+          <div class="sheet__grid">
+            <ul class="bullet-list">
+            <li><strong>Afeitado suave y preciso.</strong> Facilita el deslizamiento para reducir la fricción.</li>
+            <li><strong>Hidratación y protección.</strong> Ayuda a acondicionar la piel durante el afeitado.</li>
+            <li><strong>Refrescante.</strong> Sensación de frescura gracias a los extractos de menta y eucalipto.</li>
+            <li><strong>Piel confortable.</strong> Disminuye tirantez y deja un acabado limpio y cómodo.</li>
+          </ul>
+            <div class="sheet__side">
+            <div class="fact">
+              <span class="badge">Con Extractos Naturales</span>
+              <p>Menta & Eucalipto para un efecto revitalizante.</p>
+            </div>
+            <div class="fact">
+              <span class="badge">Textura Rica</span>
+              <p>Espuma cremosa que mejora el deslizamiento.</p>
+            </div>
+            <div class="fact">
+              <span class="badge">Uso Diario</span>
+              <p>Apta para rutinas de afeitado frecuentes.</p>
+            </div>
+          </div>
+          </div>
+        </article>
+
+        <!-- Slide 2: Modo de uso -->
+        <article class="sheet" data-title="Modo de uso">
+          <header class="sheet__header">
+            <span class="kicker">Cómo aplicarlo</span>
+            <h3 class="sheet__title">Modo de uso</h3>
+          </header>
+          <ol class="steps">
+          <li>
+            <h4>Prepara</h4>
+            <p>Aplica una cantidad adecuada sobre la piel húmeda.</p>
+          </li>
+          <li>
+            <h4>Distribuye</h4>
+            <p>Extiende con las manos o una brocha hasta formar espuma.</p>
+          </li>
+          <li>
+            <h4>Afeita & Enjuaga</h4>
+            <p>Afeita con normalidad y enjuaga con abundante agua.</p>
+          </li>
+        </ol>
+        </article>
+
+        <!-- Slide 3: Generalidades + Fórmula -->
+        <article class="sheet" data-title="Generalidades">
+          <header class="sheet__header">
+            <span class="kicker">Información</span>
+            <h3 class="sheet__title">Generalidades & Fórmula</h3>
+          </header>
+          <div class="notes" style="margin-top:15px;">
+          <ul>
+            <li>Uso externo únicamente.</li>
+            <li>Evitar el contacto con los ojos; en caso de contacto, enjuagar con abundante agua.</li>
+            <li>No aplicar sobre piel irritada o lesionada.</li>
+            <li>Mantener fuera del alcance de los niños.</li>
+            <li>Conservar en lugar fresco y seco, protegido de la luz directa.</li>
+          </ul>
+          </div>
+          <div class="formula">
+            <h4>Fórmula</h4>
+            <p>
+              <strong>Ingredientes:</strong><br>
+              Aqua (Water), Stearic Acid, Glycerin, Zea Mays (Corn) Oil, Potassium Hydroxide, Tocopherol,
+Fragrance (Parfum), Cetyl Alcohol, Sodium Hydroxide, Mentha Piperita (Peppermint) Extract,
+Eucalyptus Globulus Leaf Extract, Methylparaben, Propylparaben.
+            </p>
+          </div>
+        </article>
+
+        <!-- Controles -->
+        <button class="modal__nav modal__nav--prev" id="sheetPrev-arkena" aria-label="Anterior">‹</button>
+        <button class="modal__nav modal__nav--next" id="sheetNext-arkena" aria-label="Siguiente">›</button>
+      </div>
+      <!-- Paginación / tabs -->
+      <div class="tabs" id="sheetTabs-arkena"></div>
+    </div>
+  </div>
+
+
 
   <!-- Modal: arkena -->
   <div class="modal" id="infoarkena" aria-hidden="true" role="dialog" aria-label="Información arkena">
